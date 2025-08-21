@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Editor de Fotos Profissional 🎨</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Editor de Fotos Profissional 🎨</h1>
+
+  <div class="container">
+    <div class="sidebar">
+      <h2>Filtros</h2>
+      <div class="filter-thumbs">
+        <canvas class="thumb" data-filter="none"></canvas>
+        <canvas class="thumb" data-filter="grayscale(100%)"></canvas>
+        <canvas class="thumb" data-filter="sepia(100%)"></canvas>
+        <canvas class="thumb" data-filter="invert(100%)"></canvas>
+      </div>
+
+      <h2>Ajustes</h2>
+      <label>Brilho: <span id="brightnessVal">100</span>%</label>
+      <input type="range" id="brightness" min="0" max="200" value="100">
+      
+      <label>Contraste: <span id="contrastVal">100</span>%</label>
+      <input type="range" id="contrast" min="0" max="200" value="100">
+      
+      <label>Saturação: <span id="saturationVal">100</span>%</label>
+      <input type="range" id="saturation" min="0" max="200" value="100">
+
+      <h2>Ferramentas</h2>
+      <button onclick="rotateImage(90)">Girar 90°</button>
+      <button onclick="addText()">Adicionar Texto</button>
+      <label>Cor da caneta:</label>
+      <input type="color" id="penColor" value="#ff0000">
+      <label>Tamanho da caneta:</label>
+      <input type="range" id="penSize" min="1" max="50" value="5">
+      <button onclick="undo()">Desfazer</button>
+      <button onclick="downloadImage()">Baixar Imagem</button>
+    </div>
+
+    <div class="main">
+      <input type="file" id="upload" accept="image/*">
+      <canvas id="canvas"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
